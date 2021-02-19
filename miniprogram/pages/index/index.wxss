@@ -1,0 +1,89 @@
+/**index.wxss**/
+page{
+  background:white;
+}
+/* .titleBG{
+  padding-top: 20rpx;
+  padding-bottom: 10%;
+  background: linear-gradient(#1E90FF, #fff);
+} */
+.titleBG{
+  width: 100%;
+  padding-top: 20rpx;
+  padding-bottom: 10%;
+  background:url(https://w.wallhaven.cc/full/3z/wallhaven-3z9vq3.jpg)no-repeat  center / cover;
+} 
+
+.noHead{
+  background-color: #fff;
+}
+.foot_mini_btn{
+  color: #4eb9f7;
+}
+.submit_info{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width:60%;
+  height:88rpx;
+  line-height:88rpx;
+  text-align:center;
+  font-size:24px;
+  color:#fff;
+  background: #FFD700;
+  /* background:linear-gradient(to right,rgba(72,222,223,1.00),rgba(42,154,225,1.00)); */
+  border-radius:50rpx;
+  margin:50rpx 0 50rpx;
+  }
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+}
+
+/* 倒计时 */
+.circle-box {
+  text-align: center;
+  margin-top: 10vw;
+}
+
+.circle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.draw_btn {
+  width: 35vw;
+  position: absolute;
+  top: 33vw;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border: 1px #000 solid;
+  border-radius: 5vw;
+}
+.daoTime{
+  height:40rpx;
+  font-size: 40rpx;
+  color:#4eb9f7;
+  padding-top:220rpx
+}
+.tui-slider-head,.tui-slider-box{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  color: #666;
+}

@@ -1,0 +1,45 @@
+<!--pages/getpic/getpic.wxml-->
+<view class="swiper-container">
+ <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+ <block wx:for="{{slider}}" wx:key="unique">
+  <swiper-item>
+    <navigator >
+      <image  src="{{item.picUrl}}" mode="widthFix"/>
+    </navigator>
+  </swiper-item>
+ </block>
+ </swiper>
+
+ <view class="dots">
+  <block wx:for="{{slider}}" wx:key="unique">
+  <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+  </block>
+ </view>
+ 
+</view>
+
+
+<view class="api_box">
+  <view class="select_text0">接口:</view>
+ <!-- 下拉组件 -->
+ <view class='select_box'>
+ <view class='select' catchtap='selectTap'>
+  <text class='select_text'>{{selectData[index]}}</text>
+ </view>
+ <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+  <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+ </view>
+</view>
+
+<view class="downBTN">
+  <button class="downBTN" bindtap="getPic">随机图片</button>
+</view>
+  
+</view>
+
+  <image class="img" src="{{pic}}"></image>
+
+
+<loading hidden="{{loadingHidden}}">
+ 获取中...
+</loading>

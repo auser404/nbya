@@ -1,0 +1,37 @@
+<view class="container">
+  <!-- 头部搜索框 -->
+  <view class="search flex-wrp">
+    <view class="search-left flex-item">
+      <image src="../../images/search.png"></image>
+      <input placeholder="搜索ZUCC码乎内容" placeholder-class="search-placeholder" />
+    </view>
+    <view class="search-right flex-item">
+      <image src="../../images/lighting.png"></image>
+    </view>
+  </view>
+  <!-- 用于解决头部被遮挡问题 -->
+  <view class="vis-wrap">
+    <view class="vis"></view>
+  </view>
+  <!-- 首页列表 -->
+  <view class="show-list" wx:for="{{feed}}" wx:key="index">
+      <!-- block01 -->
+      <view class="list-head" bindtap="toQuestion">
+        <text class="question">{{item.question}}</text>
+      </view>
+      <!-- block02 -->
+      <view class="user-left">
+        <image src="{{item.feed_source_img}}"></image>
+        <text class="name">{{item.feed_source_name}}</text>
+      </view>
+      <!-- block03 -->
+      <view class="answer" bindtap="toAnswer">
+        <text>{{item.answer_ctnt}}</text>
+      </view>
+      <!-- block04 -->
+      <view class="list-bottom">
+        <text>{{item.good_num + "赞同 • " + item.comment_num + "评论"}}</text>
+        <image src="../../images/more.png"></image>
+      </view>
+  </view>
+</view>

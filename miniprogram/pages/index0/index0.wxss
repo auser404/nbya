@@ -1,0 +1,118 @@
+.container{
+  padding: 0;
+  font-size: 14rpx;
+  background: #F0F4F3;
+  color: #000;
+}
+.search{
+  width: 750rpx;
+  height: 80rpx;
+  padding: 12.5rpx 0 12.5rpx 15rpx;
+  background-color: #2a8ce5;
+  position: fixed;
+  top: 0;
+}
+.search-left{
+  display: flex;
+  flex: 8;
+  background-color: #4ea3e7;
+  text-align: left;
+  align-items: center;
+}
+.search-left input{
+  display: inline-block;
+  height: 65rpx;
+  font-size: 26rpx;
+}
+.search-placeholder{
+  color: #8ccefd;
+  line-height: 10rpx;
+}
+.search-left image{
+  display: inline-block;
+  width: 65rpx;
+  height: 65rpx;
+  padding: 15rpx 15rpx 15rpx 15rpx;
+}
+.search-right{
+  flex: 1;
+}
+.search-right image{
+  width: 58rpx;
+  height: 58rpx;
+  padding: 10rpx;
+}
+
+/* 首页列表 */
+.show-list{
+  width: 750rpx;
+  padding: 25rpx 22rpx 20rpx 22rpx;
+  margin-top: 12rpx;
+  /* margin-bottom: -108rpx; */
+  background: #ffffff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 5px #eeeeee;
+  top: 40;
+}
+.show-list .list-head{
+  width: 100%;
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 28rpx;
+  margin-bottom: 20rpx;
+}
+.show-list .user-left image{
+  display: inline-block;
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 45rpx;
+  top: 10rpx;
+  vertical-align: middle;
+  margin-right: 15rpx;
+}
+.show-list .user-left text{
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  vertical-align: middle;
+  color: #444;
+  font-size: 24rpx;
+}
+.show-list .answer{
+  padding: 10rpx 0 0 0;
+  font-size: 26rpx;
+  font-weight: 450;
+  line-height: 38rpx;
+  color: #000;
+  margin-bottom: 15rpx;
+  
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.show-list .list-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.show-list .list-bottom text{
+  color: #999;
+  font-size: 24rpx;
+}
+.show-list .list-bottom image{
+  display: inline-block;
+  width: 40rpx;
+  height: 45rpx;
+}
+
+.vis-wrap{
+  background-color: #fff;
+  width: 100%;
+}
+.vis-wrap .vis{
+  margin-top: 80rpx;
+}

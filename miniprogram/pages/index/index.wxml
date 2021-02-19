@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="titleBG">
+  <view class="userinfo">
+    <!-- 头像是否展示（2种） -->
+    <block wx:if="{{!hasUserInfo && canIUse || ifHide}}">
+      <view bindtap="bindViewTap" class="userinfo-avatar noHead" mode="cover"></view>
+      <text class="userinfo-nickname">???</text>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    <view class="someThingCantSee"></view>
+    <!-- 按钮展示3种 -->
+    <button wx:if="{{!hasUserInfo && canIUse}}" class="foot_mini_btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取信息</button>
+    <!-- 这种情况下展示信息不调用网络接口 -->
+    <button wx:elif="{{ifHide}}" class="foot_mini_btn"  bindtap="hideUser">展示信息</button>
+    <button wx:else class="foot_mini_btn"  bindtap="hideUser">隐藏信息</button>
+  </view>
+</view>
+
+
+<view style="overflow:hidden">
+  <slider bindchanging="changeSlider" value="{{slider}}"/>{{time}}
+</view>
+<view wx:if="{{!hidebtn}}">
+  <button type="default" bindtap="both">学习倒计时</button>
+</view>
+<view class="wrap">
+  <view class="circle-box">
+    <canvas class="circle" style="z-index: -99; width:200px; height:200px;" canvas-id="canvasCircle">
+    </canvas>
+    <canvas class="circle" style="width:200px; height:200px;" canvas-id="canvasArcCir">
+    </canvas>
+    <view class="daoTime">{{timeCountDownTop}}</view>
+  </view>
+</view>
