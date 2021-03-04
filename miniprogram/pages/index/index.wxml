@@ -4,7 +4,7 @@
     <!-- 头像是否展示（2种） -->
     <block wx:if="{{!hasUserInfo && canIUse || ifHide}}">
       <view bindtap="bindViewTap" class="userinfo-avatar noHead" mode="cover"></view>
-      <text class="userinfo-nickname">???</text>
+      <text class="userinfo-nickname">小问号</text>
     </block>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -21,11 +21,20 @@
 
 
 <view style="overflow:hidden">
-  <slider bindchanging="changeSlider" value="{{slider}}"/>{{time}}
+  <slider min="5" max="7200" show-value="true" backgroundColor="#528B8B" activeColor="#97FFFF" block-color="#1E90FF" bindchanging="changeSlider" value="{{time}}"/>
 </view>
-<view wx:if="{{!hidebtn}}">
-  <button type="default" bindtap="both">学习倒计时</button>
+{{getApp().globalData.stop}}
+<view wx:if="{{!counting&&!stop}}">
+  <button class="greenBTN" type="default" bindtap="both">我要学习</button>
 </view>
+<view class="btnHome" wx:elif="{{!counting&&stop}}">
+  <button class="half1" type="default" bindtap="again">接着干</button>
+  <button class="half2" type="default" bindtap="both">重新学</button>
+</view>
+<view wx:else>
+  <button class="xiu" type="default" bindtap="stop">休息一会</button>
+</view>
+<!-- {{count}}{{step}} -->
 <view class="wrap">
   <view class="circle-box">
     <canvas class="circle" style="z-index: -99; width:200px; height:200px;" canvas-id="canvasCircle">
@@ -34,4 +43,22 @@
     </canvas>
     <view class="daoTime">{{timeCountDownTop}}</view>
   </view>
+</view>
+
+
+<view wx:if="{{!counting&&!success}}" class="btn">快开始学习鸭~</view>
+<view wx:elif="{{!counting&&success}}" class="btn">学习任务完成</view>
+<view wx:elif="{{counting&&allcount%4==1}}" class="btn">已经累计学习{{hasLearn}}</view>
+<view wx:elif="{{counting&&allcount%4==2}}" class="btn">已经累计学习{{hasLearn}}.</view>
+<view wx:elif="{{counting&&allcount%4==3}}" class="btn">已经累计学习{{hasLearn}}..</view>
+<view wx:elif="{{counting&&allcount%4==0}}" class="btn">已经累计学习{{hasLearn}}...</view>
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+  <!--drawer content-->
+  <view class="drawer_title">恭喜你</view>
+  <view class="drawer_title">完成了{{Lastime}}的学习目标！</view>
+  <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
 </view>

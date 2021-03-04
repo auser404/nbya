@@ -1,0 +1,16 @@
+<!--pages/tools/tools.wxml-->
+<view class="bg2">
+  <view class="topbox">
+      <image src="https://w.wallhaven.cc/full/1k/wallhaven-1kkdy9.jpg" mode="widthFix">
+      </image>
+      <view class="toptxt">TOOLSBOX</view>
+  </view>
+</view>
+<view class="bg">
+  <view class="B{{item.css}}" wx:for="{{tools}}" wx:key="index" data-url="{{item.url}}" catchtap="gotools">
+    <view class="box {{item.css}}">
+      <image class="img" src="{{item.pic}}"></image>
+      <view>{{item.name}}</view>
+    </view>
+  </view>
+</view>

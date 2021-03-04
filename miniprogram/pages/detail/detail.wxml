@@ -1,0 +1,19 @@
+<!--pages/detail/detail.wxml-->
+<view class="detail-container">
+  <image class="head-image" src="{{pic}}"></image>
+  <view class="author-date">
+    <image class="avatar" src="/images/nby.jpg"></image>
+    <text class="author">{{writer}}</text>
+  </view>
+  <text class="title">{{title}}</text>
+  <view class="tool">
+    <view class="circle-img">
+      <image src="/images/icon/收藏.png"></image>
+      <image class="share-img" src="/images/icon/分享.png"></image>
+    </view>
+    <view class="horizon"></view>
+  </view>
+  <text class="detail">抱歉，由于系统限制，小程序内文章内容暂时无法查看，请前往公众号中查看。</text>
+  <!-- {{web}} -->
+  <text class="detail end">文章id:{{id}}</text>
+</view>

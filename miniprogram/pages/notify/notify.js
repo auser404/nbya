@@ -1,4 +1,5 @@
 // pages/notify/notify.js
+const app = getApp()
 Page({
 
   /**
@@ -9,64 +10,73 @@ Page({
     currentNavtab: "0",
     caton:[
       {
+        "id":"ct1",
         "title":"动漫第一期",
-        "pic":"",
+        "writer":"牛逼鸭",
+        "pic":"http://www.dmoe.cc/random.php",
         "web":"https://mp.weixin.qq.com/s/4-T2ur-ijhWa7G9yjBxYVQ"
       },
       {
+        "id":"ct2",
         "title":"动漫第二期",
-        "pic":"",
+        "writer":"牛逼鸭",
+        "pic":"http://www.dmoe.cc/random.php",
         "web":"https://mp.weixin.qq.com/s/u_5ESAy9ISILgg5eciWDwA"
       },
       {
+        "id":"ct3",
         "title":"动漫第三期",
-        "pic":"",
+        "writer":"牛逼鸭",
+        "pic":"http://www.dmoe.cc/random.php",
         "web":"https://mp.weixin.qq.com/s/6H9zUWaSPxfhtJWYOXwoOQ"
       },
     ],
     game:[
       {
+        "id":"gm1",
         "title":"游戏第一期",
-        "pic":"",
+        "writer":"牛逼鸭",
+        "pic":"http://www.dmoe.cc/random.php",
         "web":"https://mp.weixin.qq.com/s/4-T2ur-ijhWa7G9yjBxYVQ"
       },
       {
+        "id":"gm2",
         "title":"游戏第二期",
-        "pic":"",
+        "writer":"牛逼鸭",
+        "pic":"http://www.dmoe.cc/random.php",
         "web":"https://mp.weixin.qq.com/s/u_5ESAy9ISILgg5eciWDwA"
       },
       {
+        "id":"gm3",
         "title":"游戏第三期",
-        "pic":"",
+        "writer":"牛逼鸭",
+        "pic":"http://www.dmoe.cc/random.php",
         "web":"https://mp.weixin.qq.com/s/6H9zUWaSPxfhtJWYOXwoOQ"
       },
     ],
-    notifyList: [
-      {
-        "img": "../../images/icon1.jpeg",
-        "name": "天才漫画家",
-        "text": "你的方案我看了,有点意思,跟我学做菜吧",
-        "time": "2020/10/16"
-      },
-      {
-        "img": "../../images/icon1.jpeg",
-        "name": "天才漫画家",
-        "text": "你的方案我看了,有点意思,跟我学做菜吧",
-        "time": "2020/10/16"
-      },
-      {
-        "img": "../../images/icon1.jpeg",
-        "name": "天才漫画家",
-        "text": "你的方案我看了,有点意思,跟我学做菜吧",
-        "time": "2020/10/16"
-      }
-    ]
+    mask:false
   },
 
   switchTab: function(e){
     this.setData({
       currentNavtab: e.currentTarget.dataset.idx
     });
+    console.log(e.currentTarget.dataset.idx)
+    var color=''
+    if (e.currentTarget.dataset.idx==0){
+      color='#FF1493'
+    }
+    else{
+      color='#298DE5'
+    }
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff', // 必写项
+      backgroundColor: color, // 必写项
+      animation: { // 可选项
+          duration: 200,
+          timingFunc: 'easeIn'
+      }
+  })
   },
 
   /**
@@ -87,7 +97,28 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(!app.globalData.stop){
+      this.setData({
+        mask:true
+      })
+      wx.showToast({
+        title: '请学完后再来',
+        icon: 'error',
+        duration: 2000
+       })
+      console.log("还在学习中...")
+      setTimeout((function callback() {
+        wx.switchTab({
+          url: '../index/index',
+        })
+    }).bind(this), 2000);
+    }
+    else{
+      this.setData({
+        mask:false
+      })
+      console.log("歇着")
+    }
   },
 
   /**
@@ -123,5 +154,12 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  pageDetail: function (data) {
+    var data = data.currentTarget.dataset
+    console.log(data)
+    wx.navigateTo({
+      url: '../detail/detail?id=' + data.id+'&title='+data.title+'&writer='+data.writer+'&pic='+data.pic+'&web='+data.web,
+    })
+  },
 })

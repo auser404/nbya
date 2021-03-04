@@ -2,14 +2,18 @@
   "pages": [
     "pages/index/index",
     "pages/notify/notify",
-    "pages/index0/index0",
-    "pages/getpic/getpic"
+    "pages/getpic/getpic",
+    "pages/detail/detail",
+    "pages/tools/tools",
+    "pages/calendarV2/index",
+    "pages/counter/counter",
+    "pages/music/music"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "未知空间",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -20,25 +24,28 @@
     "borderStyle": "white",
     "list": [
       {
-        "text": "首页",
-        "pagePath": "pages/getpic/getpic",
-        "iconPath": "images/tabBar/index.png",
-        "selectedIconPath": "images/tabBar/index_focus.png"
-      },
-      {
-        "text": "资讯",
+        "text": "资讯中心",
         "pagePath": "pages/notify/notify",
-        "iconPath": "images/tabBar/ring.png",
-        "selectedIconPath": "images/tabBar/ring_focus.png"
+        "iconPath": "images/tabBar/jy2.png",
+        "selectedIconPath": "images/tabBar/jy1.png"
       },
       {
-        "text": "我的",
+        "text": "工具箱子",
+        "pagePath": "pages/tools/tools",
+        "iconPath": "images/tabBar/ab2.png",
+        "selectedIconPath": "images/tabBar/ab1.png"
+      },
+      {
+        "text": "我的学习",
         "pagePath": "pages/index/index",
-        "iconPath": "images/tabBar/my.png",
-        "selectedIconPath": "images/tabBar/my_focus.png"
+        "iconPath": "images/tabBar/nz2.png",
+        "selectedIconPath": "images/tabBar/nz1.png"
       }
     ]
   },
+  "networkTimeout": {
+    "request": 2000
+ },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

@@ -1,3 +1,6 @@
+<!-- 遮罩 -->
+<view class="mask" wx:if="{{mask}}"></view>
+
 <view class="bgClr {{currentNavtab==0 ? 'top.tab.clr2' : 'top.tab.clr1'}}">
   <view class="top-tab {{currentNavtab==0 ? 'top.tab.clr2' : 'top.tab.clr1'}}">
     <view class="toptab {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" 
@@ -9,28 +12,28 @@
   <view class="container">
     <!-- 动漫区 -->
     <view class="cnt0" hidden="{{currentNavtab==0 ? '' : true}}" wx:for="{{caton}}" wx:key="{{index}}">
-      <view class="content">
+      <view data-id="{{item.id}}" data-title="{{item.title}}" data-writer="{{item.writer}}" data-pic="{{item.pic}}" data-web="{{item.web}}"catchtap="pageDetail" class="content">
         <view class="text">
           <view class="title">
             <text>{{item.title}}</text>
           </view>
         </view>
-        <view class="img">
+        <!-- <view class="img">
           <image src="{{item.pic}}"></image>
-        </view>
+        </view> -->
       </view>
     </view>
   <!-- 游戏区 -->
   <view class="cnt0" hidden="{{currentNavtab==1 ? '' : true}}" wx:for="{{game}}" wx:key="{{index}}">
-      <view class="content">
+      <view data-id="{{item.id}}" data-title="{{item.title}}" data-writer="{{item.writer}}" data-pic="{{item.pic}}" data-web="{{item.web}}"catchtap="pageDetail" class="content">
         <view class="text">
           <view class="title">
             <text>{{item.title}}</text>
           </view>
         </view>
-        <view class="img">
+        <!-- <view class="img">
           <image src="{{item.pic}}"></image>
-        </view>
+        </view> -->
       </view>
     </view>
   </view>

@@ -1,10 +1,13 @@
 <!--pages/getpic/getpic.wxml-->
+<!-- 遮罩 -->
+<view class="mask" wx:if="{{mask}}"></view>
+
 <view class="swiper-container">
  <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
  <block wx:for="{{slider}}" wx:key="unique">
   <swiper-item>
     <navigator >
-      <image  src="{{item.picUrl}}" mode="widthFix"/>
+      <image  class="img" src="{{item.picUrl}}" mode="widthFix"/>
     </navigator>
   </swiper-item>
  </block>
@@ -18,8 +21,8 @@
  
 </view>
 
-
 <view class="api_box">
+  <view class="nothing"></view>
   <view class="select_text0">接口:</view>
  <!-- 下拉组件 -->
  <view class='select_box'>
@@ -30,16 +33,17 @@
   <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
  </view>
 </view>
-
-<view class="downBTN">
-  <button class="downBTN" bindtap="getPic">随机图片</button>
+<view class="nothing"></view>
+<view>
+  <button class="downBTN" bindtap="getPic">翻牌</button>
 </view>
   
 </view>
-
-  <image class="img" src="{{pic}}"></image>
-
-
+  <image class="img" src="{{pic}}" mode="widthFix"></image>
 <loading hidden="{{loadingHidden}}">
  获取中...
 </loading>
+
+<!-- <button bandtap="getPic3">00</button>
+<image wx:if="{{index2==1}}" src="http://www.dmoe.cc/random.php" mode="heightFix"></image>
+<image wx:if="{{index2==2}}" src="http://www.dmoe.cc/random.php" mode="heightFix"></image> -->

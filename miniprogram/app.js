@@ -1,4 +1,7 @@
 //app.js
+//作者blibili 牛逼鸭
+//请勿商用
+//https://space.bilibili.com/32540084
 App({
   onLaunch: function () {
     if (!wx.cloud) {
@@ -13,7 +16,8 @@ App({
         traceUser: true,
       })
     }
-
-    this.globalData = {}
+    this.globalData = {
+      stop:true//计时是否停止
+    }
   }
 })

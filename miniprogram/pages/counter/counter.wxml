@@ -1,0 +1,45 @@
+<view class="result">
+  <!-- 当前view表示的是显示部分 -->
+  <view class="result_num">{{num}}</view>
+  <!--显示操作数 -->
+  <view class="result_op">{{op}}</view>
+  <!--显示操作符 -->
+</view>
+
+<view class="btns">
+  <!-- 当前view表示的是操作部分 -->
+  <view>
+    <!--第一行 -->
+    <view hover-class="bg" bindtap="resetBtn">C</view>
+    <view hover-class="bg" bindtap="delBtn">DEL</view>
+    <view hover-class="bg" bindtap="opBtn" data-val="%">%</view>
+    <view hover-class="bg" bindtap="opBtn" data-val="/">÷</view>
+  </view>
+  <view>
+    <!--第二行 -->
+    <view hover-class="bg" bindtap="numBtn" data-val="7">7</view>
+    <view hover-class="bg" bindtap="numBtn" data-val="8">8</view>
+    <view hover-class="bg" bindtap="numBtn" data-val="9">9</view>
+    <view hover-class="bg" bindtap="opBtn" data-val="*">×</view>
+  </view>
+  <view>
+    <!--第三行 -->
+    <view hover-class="bg" bindtap="numBtn" data-val="4">4</view>
+    <view hover-class="bg" bindtap="numBtn" data-val="5">5</view>
+    <view hover-class="bg" bindtap="numBtn" data-val="6">6</view>
+    <view hover-class="bg" bindtap="opBtn" data-val="-">-</view>
+  </view>
+  <view>
+    <!--第四行 -->
+    <view hover-class="bg" bindtap="numBtn" data-val="1">1</view>
+    <view hover-class="bg" bindtap="numBtn" data-val="2">2</view>
+    <view hover-class="bg" bindtap="numBtn" data-val="3">3</view>
+    <view hover-class="bg" bindtap="opBtn" data-val="+">+</view>
+  </view>
+  <view>
+    <!--第五行 -->
+    <view hover-class="bg" bindtap="numBtn" data-val="0">0</view>
+    <view hover-class="bg" bindtap="doBtn">.</view>
+    <view hover-class="bg" bindtap="opBtn" data-val="=">=</view>
+  </view>
+</view>

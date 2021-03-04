@@ -27,6 +27,18 @@
         {
           "name": "pages/getpic/getpic",
           "pathName": "pages/getpic/getpic",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tools/tools",
+          "pathName": "pages/tools/tools",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "计算器",
+          "pathName": "pages/counter/counter",
           "scene": null
         }
       ]

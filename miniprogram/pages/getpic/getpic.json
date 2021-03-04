@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "图片欣赏",
+  "navigationBarBackgroundColor": "#db86a2"
 }

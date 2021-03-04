@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "工具箱子",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#ffc457"
+}

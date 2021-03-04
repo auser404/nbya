@@ -39,7 +39,7 @@
   margin: 85rpx 0;
 }
 .container .cnt0{
-  width: 750rpx;
+  width: 680rpx;
   background-color: #fff;
   padding: 5rpx 20rpx 5rpx 20rpx;
   margin-bottom: 5rpx;
